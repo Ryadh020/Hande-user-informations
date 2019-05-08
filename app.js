@@ -1,10 +1,11 @@
 // DOM ELEMENT REFERENCES
+const hobbies = document.getElementById('hobbies');
+const transport = document.getElementById('transport');
+const select = document.getElementById('music-preference');
+
 const hobbiesResult = document.getElementById('hobbies-result');
 const transportResult = document.getElementById('transport-result');
 const musicResult = document.getElementById('music-result');
-
-const hobbies = document.getElementById('hobbies');
-const transport = document.getElementById('transport');
 
 // CHECKBOX LISTENERS :
 function checkbox(n) {
@@ -22,3 +23,9 @@ for(let i = 1; i<=5 ;i+=2) {
         transportResult.textContent = valueOfElement;
     })
 }
+
+// THE DROPDOWN MENUS :
+    select.addEventListener("change",(event)=> {
+        let valueOfElement = event.target.value ;
+        musicResult.textContent = valueOfElement;
+    })
