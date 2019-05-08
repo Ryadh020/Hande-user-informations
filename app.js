@@ -41,7 +41,7 @@ for(let i = 1; i<=5 ;i+=2) {
                 event.preventDefault();
                 let valueOfTextInput = other.value;
                 transportResult.textContent = valueOfTextInput;
-                /*other.reset();*/
+                otherTrans.reset();
                 otherTrans.style.visibility = "hidden";
             })
         }else {
