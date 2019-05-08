@@ -2,6 +2,9 @@
 const hobbies = document.getElementById('hobbies');
 const music = document.getElementById('music');
 const transport = document.getElementById('transport');
+const otherTrans = document.getElementById('otherTrans');
+const other = document.getElementById('other');
+const submit = document.getElementById('submit');
 const select = document.getElementById('music-preference');
 
 const hobbiesResult = document.getElementById('hobbies-result');
@@ -29,9 +32,23 @@ checkbox(1); checkbox(3); checkbox(5);
 
 // RADIO BUTTONS :
 for(let i = 1; i<=5 ;i+=2) {
-    transport.childNodes[i].childNodes[1].addEventListener("click",(event)=> {
-        let valueOfElement = event.target.value ;
-        transportResult.textContent = valueOfElement;
+    transport.childNodes[i].childNodes[1].addEventListener("change",(event)=> {
+        
+        if(event.target.value === "other") {
+            otherTrans.style.visibility = "visible";
+            transportResult.textContent = " ";
+            submit.addEventListener("click",(event)=> {
+                event.preventDefault();
+                let valueOfTextInput = other.value;
+                transportResult.textContent = valueOfTextInput;
+                /*other.reset();*/
+                otherTrans.style.visibility = "hidden";
+            })
+        }else {
+            let valueOfElement = event.target.value ;
+            transportResult.textContent = valueOfElement;
+            otherTrans.style.visibility = "hidden";
+        }
     })
 }
 
