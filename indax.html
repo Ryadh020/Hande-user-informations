@@ -6,7 +6,7 @@
   <body>
     <div class="container">
       <header id="page-header" class="bg-dark text-white col-sm-12">
-        <h1 id="main-heading" class="text-center">Handle user input</h1>
+        <h1 id="main-heading" class="text-center">Handle user inputs</h1>
       </header>
       <div class="row">
         <main class="col-sm-8">
@@ -32,6 +32,17 @@
                 </label>
               </div>
             </div>
+            <div class="form-group" id="music" style="display: none">
+                <label for="music-preference">
+                  Favourite kind of music
+                </label>
+                <select class="form-control" id="music-preference" >
+                  <option value="rock">Rock</option>
+                  <option value="jazz">Jazz</option>
+                  <option value="classical">Classical</option>
+                  <option value="other">Other</option>
+                </select>
+            </div>
             <h3>Favourite mode of transport</h3>
             <div class="form-group" id="transport">
               <div class="form-check">
@@ -53,17 +64,6 @@
                 </label>
               </div>
             </div>
-            <div class="form-group">
-              <label for="music-preference">
-                Favourite kind of music
-              </label>
-              <select class="form-control" id="music-preference">
-                <option value="rock">Rock</option>
-                <option value="jazz">Jazz</option>
-                <option value="classical">Classical</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
           </form>
         </main>
         <aside id="sidebar" class="col-sm-4 bg-info text-white">
@@ -75,11 +75,13 @@
               <li class="text-secondary">Music</li>
             </ul>
           </p>
+          <div id="shoxMusic" style="display: none">
+            <p>Your favourite kind of music is:
+                <b><span id="music-result"></span></b>
+            </p>
+          </div>
           <p>Your favourite mode of transport is: 
            <b><span id="transport-result"></span></b>
-          </p>
-          <p>Your favourite kind of music is:
-           <b><span id="music-result"></span></b>
           </p>
         </aside>
       </div>
